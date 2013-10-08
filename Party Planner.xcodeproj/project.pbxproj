@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA14BAEE1803D5A60019FA73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA14BAED1803D5A60019FA73 /* UIKit.framework */; };
+		DA14BAF01803D5A60019FA73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA14BAEF1803D5A60019FA73 /* Foundation.framework */; };
+		DA14BAF21803D5A60019FA73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA14BAF11803D5A60019FA73 /* CoreGraphics.framework */; };
+		DA14BAF41803D5A60019FA73 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA14BAF31803D5A60019FA73 /* CoreData.framework */; };
+		DA14BAFA1803D5A60019FA73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA14BAF81803D5A60019FA73 /* InfoPlist.strings */; };
+		DA14BAFC1803D5A60019FA73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BAFB1803D5A60019FA73 /* main.m */; };
+		DA14BB001803D5A60019FA73 /* BRITAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BAFF1803D5A60019FA73 /* BRITAppDelegate.m */; };
+		DA14BB021803D5A60019FA73 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA14BB011803D5A60019FA73 /* Default.png */; };
+		DA14BB041803D5A60019FA73 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA14BB031803D5A60019FA73 /* Default@2x.png */; };
+		DA14BB061803D5A60019FA73 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA14BB051803D5A60019FA73 /* Default-568h@2x.png */; };
+		DA14BB091803D5A60019FA73 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA14BB071803D5A60019FA73 /* MainStoryboard_iPhone.storyboard */; };
+		DA14BB0C1803D5A60019FA73 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA14BB0A1803D5A60019FA73 /* MainStoryboard_iPad.storyboard */; };
+		DA14BB0F1803D5A60019FA73 /* Party_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */; };
+		DA14BB121803D5A60019FA73 /* BRITMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */; };
+		DA14BB151803D5A60019FA73 /* BRITDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA14BAEA1803D5A60019FA73 /* Party Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA14BAED1803D5A60019FA73 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA14BAEF1803D5A60019FA73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA14BAF11803D5A60019FA73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DA14BAF31803D5A60019FA73 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA14BAF71803D5A60019FA73 /* Party Planner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Party Planner-Info.plist"; sourceTree = "<group>"; };
+		DA14BAF91803D5A60019FA73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA14BAFB1803D5A60019FA73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA14BAFD1803D5A60019FA73 /* Party Planner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Party Planner-Prefix.pch"; sourceTree = "<group>"; };
+		DA14BAFE1803D5A60019FA73 /* BRITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRITAppDelegate.h; sourceTree = "<group>"; };
+		DA14BAFF1803D5A60019FA73 /* BRITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITAppDelegate.m; sourceTree = "<group>"; };
+		DA14BB011803D5A60019FA73 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DA14BB031803D5A60019FA73 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DA14BB051803D5A60019FA73 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DA14BB081803D5A60019FA73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		DA14BB0B1803D5A60019FA73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		DA14BB0E1803D5A60019FA73 /* Party_Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Party_Planner.xcdatamodel; sourceTree = "<group>"; };
+		DA14BB101803D5A60019FA73 /* BRITMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRITMasterViewController.h; sourceTree = "<group>"; };
+		DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITMasterViewController.m; sourceTree = "<group>"; };
+		DA14BB131803D5A60019FA73 /* BRITDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRITDetailViewController.h; sourceTree = "<group>"; };
+		DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA14BAE71803D5A60019FA73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA14BAEE1803D5A60019FA73 /* UIKit.framework in Frameworks */,
+				DA14BAF01803D5A60019FA73 /* Foundation.framework in Frameworks */,
+				DA14BAF21803D5A60019FA73 /* CoreGraphics.framework in Frameworks */,
+				DA14BAF41803D5A60019FA73 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA14BAE11803D5A50019FA73 = {
+			isa = PBXGroup;
+			children = (
+				DA14BAF51803D5A60019FA73 /* Party Planner */,
+				DA14BAEC1803D5A60019FA73 /* Frameworks */,
+				DA14BAEB1803D5A60019FA73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA14BAEB1803D5A60019FA73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA14BAEA1803D5A60019FA73 /* Party Planner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA14BAEC1803D5A60019FA73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA14BAED1803D5A60019FA73 /* UIKit.framework */,
+				DA14BAEF1803D5A60019FA73 /* Foundation.framework */,
+				DA14BAF11803D5A60019FA73 /* CoreGraphics.framework */,
+				DA14BAF31803D5A60019FA73 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA14BAF51803D5A60019FA73 /* Party Planner */ = {
+			isa = PBXGroup;
+			children = (
+				DA14BAFE1803D5A60019FA73 /* BRITAppDelegate.h */,
+				DA14BAFF1803D5A60019FA73 /* BRITAppDelegate.m */,
+				DA14BB071803D5A60019FA73 /* MainStoryboard_iPhone.storyboard */,
+				DA14BB0A1803D5A60019FA73 /* MainStoryboard_iPad.storyboard */,
+				DA14BB101803D5A60019FA73 /* BRITMasterViewController.h */,
+				DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */,
+				DA14BB131803D5A60019FA73 /* BRITDetailViewController.h */,
+				DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */,
+				DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */,
+				DA14BAF61803D5A60019FA73 /* Supporting Files */,
+			);
+			path = "Party Planner";
+			sourceTree = "<group>";
+		};
+		DA14BAF61803D5A60019FA73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA14BAF71803D5A60019FA73 /* Party Planner-Info.plist */,
+				DA14BAF81803D5A60019FA73 /* InfoPlist.strings */,
+				DA14BAFB1803D5A60019FA73 /* main.m */,
+				DA14BAFD1803D5A60019FA73 /* Party Planner-Prefix.pch */,
+				DA14BB011803D5A60019FA73 /* Default.png */,
+				DA14BB031803D5A60019FA73 /* Default@2x.png */,
+				DA14BB051803D5A60019FA73 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA14BAE91803D5A60019FA73 /* Party Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA14BB181803D5A60019FA73 /* Build configuration list for PBXNativeTarget "Party Planner" */;
+			buildPhases = (
+				DA14BAE61803D5A60019FA73 /* Sources */,
+				DA14BAE71803D5A60019FA73 /* Frameworks */,
+				DA14BAE81803D5A60019FA73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Party Planner";
+			productName = "Party Planner";
+			productReference = DA14BAEA1803D5A60019FA73 /* Party Planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA14BAE21803D5A50019FA73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BRIT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Brass Ring IT, LLC";
+			};
+			buildConfigurationList = DA14BAE51803D5A50019FA73 /* Build configuration list for PBXProject "Party Planner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA14BAE11803D5A50019FA73;
+			productRefGroup = DA14BAEB1803D5A60019FA73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA14BAE91803D5A60019FA73 /* Party Planner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA14BAE81803D5A60019FA73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA14BAFA1803D5A60019FA73 /* InfoPlist.strings in Resources */,
+				DA14BB021803D5A60019FA73 /* Default.png in Resources */,
+				DA14BB041803D5A60019FA73 /* Default@2x.png in Resources */,
+				DA14BB061803D5A60019FA73 /* Default-568h@2x.png in Resources */,
+				DA14BB091803D5A60019FA73 /* MainStoryboard_iPhone.storyboard in Resources */,
+				DA14BB0C1803D5A60019FA73 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA14BAE61803D5A60019FA73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA14BAFC1803D5A60019FA73 /* main.m in Sources */,
+				DA14BB001803D5A60019FA73 /* BRITAppDelegate.m in Sources */,
+				DA14BB0F1803D5A60019FA73 /* Party_Planner.xcdatamodeld in Sources */,
+				DA14BB121803D5A60019FA73 /* BRITMasterViewController.m in Sources */,
+				DA14BB151803D5A60019FA73 /* BRITDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA14BAF81803D5A60019FA73 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA14BAF91803D5A60019FA73 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA14BB071803D5A60019FA73 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA14BB081803D5A60019FA73 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		DA14BB0A1803D5A60019FA73 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA14BB0B1803D5A60019FA73 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA14BB161803D5A60019FA73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA14BB171803D5A60019FA73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA14BB191803D5A60019FA73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Party Planner/Party Planner-Prefix.pch";
+				INFOPLIST_FILE = "Party Planner/Party Planner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA14BB1A1803D5A60019FA73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Party Planner/Party Planner-Prefix.pch";
+				INFOPLIST_FILE = "Party Planner/Party Planner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA14BAE51803D5A50019FA73 /* Build configuration list for PBXProject "Party Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA14BB161803D5A60019FA73 /* Debug */,
+				DA14BB171803D5A60019FA73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA14BB181803D5A60019FA73 /* Build configuration list for PBXNativeTarget "Party Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA14BB191803D5A60019FA73 /* Debug */,
+				DA14BB1A1803D5A60019FA73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA14BB0E1803D5A60019FA73 /* Party_Planner.xcdatamodel */,
+			);
+			currentVersion = DA14BB0E1803D5A60019FA73 /* Party_Planner.xcdatamodel */;
+			path = Party_Planner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA14BAE21803D5A50019FA73 /* Project object */;
+}
