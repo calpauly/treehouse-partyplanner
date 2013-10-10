@@ -22,6 +22,9 @@
 		DA14BB0F1803D5A60019FA73 /* Party_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */; };
 		DA14BB121803D5A60019FA73 /* BRITMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */; };
 		DA14BB151803D5A60019FA73 /* BRITDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */; };
+		DAF494A118051A3400BFC0C0 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF494A018051A3400BFC0C0 /* Party.m */; };
+		DAF494A418051A5000BFC0C0 /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF494A318051A5000BFC0C0 /* Guest.m */; };
+		DAF494A718051A7600BFC0C0 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF494A618051A7600BFC0C0 /* Food.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,12 @@
 		DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITMasterViewController.m; sourceTree = "<group>"; };
 		DA14BB131803D5A60019FA73 /* BRITDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRITDetailViewController.h; sourceTree = "<group>"; };
 		DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITDetailViewController.m; sourceTree = "<group>"; };
+		DAF4949F18051A3400BFC0C0 /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
+		DAF494A018051A3400BFC0C0 /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Party.m; sourceTree = "<group>"; };
+		DAF494A218051A5000BFC0C0 /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Guest.h; path = ../Guest.h; sourceTree = "<group>"; };
+		DAF494A318051A5000BFC0C0 /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Guest.m; path = ../Guest.m; sourceTree = "<group>"; };
+		DAF494A518051A7600BFC0C0 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		DAF494A618051A7600BFC0C0 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,7 @@
 		DA14BAF51803D5A60019FA73 /* Party Planner */ = {
 			isa = PBXGroup;
 			children = (
+				DAF494A818051ADA00BFC0C0 /* Model */,
 				DA14BAFE1803D5A60019FA73 /* BRITAppDelegate.h */,
 				DA14BAFF1803D5A60019FA73 /* BRITAppDelegate.m */,
 				DA14BB071803D5A60019FA73 /* MainStoryboard_iPhone.storyboard */,
@@ -120,6 +130,19 @@
 				DA14BB051803D5A60019FA73 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAF494A818051ADA00BFC0C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAF494A218051A5000BFC0C0 /* Guest.h */,
+				DAF494A318051A5000BFC0C0 /* Guest.m */,
+				DAF494A518051A7600BFC0C0 /* Food.h */,
+				DAF494A618051A7600BFC0C0 /* Food.m */,
+				DAF4949F18051A3400BFC0C0 /* Party.h */,
+				DAF494A018051A3400BFC0C0 /* Party.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +218,9 @@
 				DA14BB0F1803D5A60019FA73 /* Party_Planner.xcdatamodeld in Sources */,
 				DA14BB121803D5A60019FA73 /* BRITMasterViewController.m in Sources */,
 				DA14BB151803D5A60019FA73 /* BRITDetailViewController.m in Sources */,
+				DAF494A118051A3400BFC0C0 /* Party.m in Sources */,
+				DAF494A418051A5000BFC0C0 /* Guest.m in Sources */,
+				DAF494A718051A7600BFC0C0 /* Food.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +353,7 @@
 				DA14BB1A1803D5A60019FA73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

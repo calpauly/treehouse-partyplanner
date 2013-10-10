@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Food" representedClassName="Food" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="party" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Party" inverseName="menu" inverseEntity="Party" syncable="YES"/>
+    </entity>
+    <entity name="Guest" representedClassName="Guest" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="party" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Party" inverseName="guests" inverseEntity="Party" syncable="YES"/>
+    </entity>
+    <entity name="Party" representedClassName="Party">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partyName" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <relationship name="guests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Guest" inverseName="party" inverseEntity="Guest" syncable="YES"/>
+        <relationship name="menu" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Food" inverseName="party" inverseEntity="Food" syncable="YES"/>
+        <userInfo/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Food" positionX="108" positionY="63" width="128" height="75"/>
+        <element name="Guest" positionX="81" positionY="189" width="128" height="75"/>
+        <element name="Party" positionX="261" positionY="189" width="128" height="120"/>
     </elements>
 </model>

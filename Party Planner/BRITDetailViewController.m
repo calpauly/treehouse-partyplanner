@@ -17,7 +17,48 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    
+    if (editing == YES) {
+        _partyNameField.borderStyle = UITextBorderStyleRoundedRect;
+        _partyDateField.borderStyle = UITextBorderStyleRoundedRect;
+        _partyLocationField.borderStyle = UITextBorderStyleRoundedRect;
+        _partyNameField.enabled = YES;
+        _partyDateField.enabled = YES;
+        _partyLocationField.enabled = YES;
+    }
+    else
+    {
+        //reset the controls to view mode
+        _partyNameField.borderStyle = UITextBorderStyleNone;
+        _partyDateField.borderStyle = UITextBorderStyleNone;
+        _partyLocationField.borderStyle = UITextBorderStyleNone;
+        _partyNameField.enabled = NO;
+        _partyDateField.enabled = NO;
+        _partyLocationField.enabled = NO;
+        
+        //save the changes
+        self.detailItem.partyName = _partyNameField.text;
+        //TODO: set the Date field value
+        //self.detailItem.date = _partyDateField.text;
+        self.detailItem.date = [NSDate date];
+        self.detailItem.location = _partyLocationField.text;
+        
+        
+        // Save the context.
+        NSError *error = nil;
+        if (![_managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
+- (void)setDetailItem:(Party *)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -36,7 +77,9 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.partyNameField.text = self.detailItem.partyName;
+        self.partyDateField.text = self.detailItem.date.description;
+        self.partyLocationField.text = self.detailItem.location;
     }
 }
 
@@ -44,6 +87,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     [self configureView];
 }
 
