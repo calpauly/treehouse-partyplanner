@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Party.h"
+@class Party;
 
-@interface BRITDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface BRITDetailViewController : UITableViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (strong, nonatomic) Party *detailItem;
-@property (weak, nonatomic) IBOutlet UITextField *partyNameField;
-@property (weak, nonatomic) IBOutlet UITextField *partyDateField;
-@property (weak, nonatomic) IBOutlet UITextField *partyLocationField;
+@property (strong, nonatomic) Party* detailItem;
 
 @end

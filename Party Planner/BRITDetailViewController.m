@@ -7,10 +7,11 @@
 //
 
 #import "BRITDetailViewController.h"
+#import "Party.h"
 
 @interface BRITDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation BRITDetailViewController
@@ -22,29 +23,29 @@
     [super setEditing:editing animated:animated];
     
     if (editing == YES) {
-        _partyNameField.borderStyle = UITextBorderStyleRoundedRect;
-        _partyDateField.borderStyle = UITextBorderStyleRoundedRect;
-        _partyLocationField.borderStyle = UITextBorderStyleRoundedRect;
-        _partyNameField.enabled = YES;
-        _partyDateField.enabled = YES;
-        _partyLocationField.enabled = YES;
+//        _partyNameField.borderStyle = UITextBorderStyleRoundedRect;
+//        _partyDateField.borderStyle = UITextBorderStyleRoundedRect;
+//        _partyLocationField.borderStyle = UITextBorderStyleRoundedRect;
+//        _partyNameField.enabled = YES;
+//        _partyDateField.enabled = YES;
+//        _partyLocationField.enabled = YES;
     }
     else
     {
         //reset the controls to view mode
-        _partyNameField.borderStyle = UITextBorderStyleNone;
-        _partyDateField.borderStyle = UITextBorderStyleNone;
-        _partyLocationField.borderStyle = UITextBorderStyleNone;
-        _partyNameField.enabled = NO;
-        _partyDateField.enabled = NO;
-        _partyLocationField.enabled = NO;
+//        _partyNameField.borderStyle = UITextBorderStyleNone;
+//        _partyDateField.borderStyle = UITextBorderStyleNone;
+//        _partyLocationField.borderStyle = UITextBorderStyleNone;
+//        _partyNameField.enabled = NO;
+//        _partyDateField.enabled = NO;
+//        _partyLocationField.enabled = NO;
         
         //save the changes
-        self.detailItem.partyName = _partyNameField.text;
+//        self.detailItem.partyName = _partyNameField.text;
         //TODO: set the Date field value
         //self.detailItem.date = _partyDateField.text;
         self.detailItem.date = [NSDate date];
-        self.detailItem.location = _partyLocationField.text;
+//        self.detailItem.location = _partyLocationField.text;
         
         
         // Save the context.
@@ -64,23 +65,12 @@
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
+        [self.tableView reloadData];
     }
 
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.partyNameField.text = self.detailItem.partyName;
-        self.partyDateField.text = self.detailItem.date.description;
-        self.partyLocationField.text = self.detailItem.location;
-    }
 }
 
 - (void)viewDidLoad
@@ -90,7 +80,7 @@
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self configureView];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +88,96 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table View
+
+-(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    switch ([indexPath row]) {
+        case 0:
+            cell.detailTextLabel.text = [self.detailItem.partyName description];
+            cell.textLabel.text = @"Party Name";
+            break;
+        case 1:
+            cell.detailTextLabel.text = [self.detailItem.location description];
+            cell.textLabel.text = @"Location";
+            break;
+        case 2:
+            cell.detailTextLabel.text = [self.detailItem.date description];
+            cell.textLabel.text = @"Date";
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+//        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+//        
+//        NSError *error = nil;
+//        if (![context save:&error]) {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
+//        }
+//    }
+//}
+
+//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // The table view should not be re-orderable.
+//    return NO;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+//        self.detailViewController.detailItem = (Party *)object;
+//    }
+//}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+//        [[segue destinationViewController] setDetailItem:(Party *)object];
+//        
+//        if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPad) {
+//            self.detailViewController = (BRITDetailViewController *)[segue destinationViewController];
+//            self.detailViewController.managedObjectContext = self.managedObjectContext;
+//        }
+//    }
+//}
 
 #pragma mark - Split view
 

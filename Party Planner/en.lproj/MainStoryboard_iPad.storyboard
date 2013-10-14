@@ -19,62 +19,6 @@
             </objects>
             <point key="canvasLocation" x="448" y="-630"/>
         </scene>
-        <!--Detail View Controller - Detail-->
-        <scene sceneID="16">
-            <objects>
-                <viewController storyboardIdentifier="" title="Detail" id="4" customClass="BRITDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="26">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Party Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVx-b3-SHe" userLabel="partyNameField">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="SzZ-00-IZz"/>
-                                    <constraint firstAttribute="height" constant="30" id="dGC-Mq-jkU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRW-by-Gl7" userLabel="dateField">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cji-6e-Ofi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-Dv-jda" userLabel="locationField">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="sOl-V3-8ye"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xVx-b3-SHe" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9MW-7I-MGA"/>
-                            <constraint firstItem="uHP-Dv-jda" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ABY-lE-0jP"/>
-                            <constraint firstItem="uHP-Dv-jda" firstAttribute="trailing" secondItem="dRW-by-Gl7" secondAttribute="trailing" type="default" id="etH-Ju-z0E"/>
-                            <constraint firstItem="dRW-by-Gl7" firstAttribute="trailing" secondItem="xVx-b3-SHe" secondAttribute="trailing" type="default" id="kSO-JG-bQE"/>
-                            <constraint firstItem="dRW-by-Gl7" firstAttribute="top" secondItem="xVx-b3-SHe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="o4f-Tp-RBs"/>
-                            <constraint firstItem="dRW-by-Gl7" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o6i-8J-uo8"/>
-                            <constraint firstItem="xVx-b3-SHe" firstAttribute="top" secondItem="26" secondAttribute="top" constant="27" id="sfk-ah-srD"/>
-                            <constraint firstItem="uHP-Dv-jda" firstAttribute="top" secondItem="dRW-by-Gl7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="znl-Vl-SUc"/>
-                        </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="53"/>
-                    <connections>
-                        <outlet property="partyDateField" destination="dRW-by-Gl7" id="03v-2s-Npr"/>
-                        <outlet property="partyLocationField" destination="uHP-Dv-jda" id="rWF-JB-Y6x"/>
-                        <outlet property="partyNameField" destination="xVx-b3-SHe" id="2su-NN-RhC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="448" y="248"/>
-        </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
             <objects>
@@ -133,6 +77,49 @@
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
         </scene>
+        <!--Detail View Controller - Detail-->
+        <scene sceneID="9NV-HM-hjH">
+            <objects>
+                <tableViewController title="Detail" id="bBb-sw-rJS" customClass="BRITDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qqG-wq-FnK">
+                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" textLabel="DaV-YC-c3o" detailTextLabel="MTs-qT-rkf" style="IBUITableViewCellStyleValue2" id="UeI-ms-DVN">
+                                <rect key="frame" x="0.0" y="22" width="703" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="703" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaV-YC-c3o">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTs-qT-rkf">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bBb-sw-rJS" id="HwT-wk-Lmg"/>
+                            <outlet property="delegate" destination="bBb-sw-rJS" id="Ueo-ld-YYf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wWv-IG-zWO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skv-wS-ap9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="248"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="50">
             <objects>
@@ -141,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4" kind="relationship" relationship="rootViewController" id="52"/>
+                        <segue destination="bBb-sw-rJS" kind="relationship" relationship="rootViewController" id="ZqO-9g-PaZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,19 +137,11 @@
         </scene>
     </scenes>
     <classes>
-        <class className="BRITDetailViewController" superclassName="UIViewController">
+        <class className="BRITDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partyDateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="partyLocationField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="partyNameField" candidateClass="UITextField"/>
-            </relationships>
         </class>
         <class className="BRITMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITMasterViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -47,7 +47,7 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="21" kind="push" identifier="showDetail" id="jZb-fq-zAk"/>
+                                    <segue destination="NKO-qg-lmr" kind="push" identifier="showDetail" id="i7u-Kq-PfJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,74 +64,54 @@
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
         <!--Detail View Controller - Detail-->
-        <scene sceneID="24">
+        <scene sceneID="Lzc-Kh-OSw">
             <objects>
-                <viewController storyboardIdentifier="" title="Detail" id="21" customClass="BRITDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="22">
+                <tableViewController title="Detail" id="NKO-qg-lmr" customClass="BRITDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DK3-6s-aZ3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Party Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Df-QyV" userLabel="partyNameField">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="gyz-Gx-sgS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAs-bJ-p30" userLabel="dateField">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2Ns-W6-hXr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KCV-Sk-Plp" userLabel="locationField">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Eij-ka-2eL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="qXf-Df-QyV" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N8g-11-5Gr"/>
-                            <constraint firstItem="cAs-bJ-p30" firstAttribute="leading" secondItem="qXf-Df-QyV" secondAttribute="leading" type="user" id="OzB-zP-UUn"/>
-                            <constraint firstAttribute="trailing" secondItem="cAs-bJ-p30" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XX3-9U-qcC"/>
-                            <constraint firstItem="cAs-bJ-p30" firstAttribute="leading" secondItem="KCV-Sk-Plp" secondAttribute="leading" type="user" id="Zvu-qO-dlg"/>
-                            <constraint firstItem="cAs-bJ-p30" firstAttribute="top" secondItem="qXf-Df-QyV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aVS-Ki-n77"/>
-                            <constraint firstItem="KCV-Sk-Plp" firstAttribute="top" secondItem="cAs-bJ-p30" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="crJ-Vq-7uy"/>
-                            <constraint firstAttribute="trailing" secondItem="qXf-Df-QyV" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eZz-T7-Zm4"/>
-                            <constraint firstAttribute="trailing" secondItem="KCV-Sk-Plp" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fNv-kk-dmN"/>
-                            <constraint firstItem="qXf-Df-QyV" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="gWT-Yy-UyX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26"/>
-                    <connections>
-                        <outlet property="partyDateField" destination="cAs-bJ-p30" id="2gs-cb-h3G"/>
-                        <outlet property="partyLocationField" destination="KCV-Sk-Plp" id="mMI-bh-MXj"/>
-                        <outlet property="partyNameField" destination="qXf-Df-QyV" id="odJ-hg-AZN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" textLabel="vko-zZ-bfv" detailTextLabel="hfh-Lr-5dZ" style="IBUITableViewCellStyleValue2" id="0SA-po-OoK">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vko-zZ-bfv">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-Lr-5dZ">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NKO-qg-lmr" id="726-ne-PO3"/>
+                            <outlet property="delegate" destination="NKO-qg-lmr" id="h4i-Ia-Htu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="imH-wC-png"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S12-3p-qgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="906" y="64"/>
         </scene>
     </scenes>
     <classes>
-        <class className="BRITDetailViewController" superclassName="UIViewController">
+        <class className="BRITDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="partyDateField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="partyLocationField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="partyNameField" candidateClass="UITextField"/>
-            </relationships>
         </class>
         <class className="BRITMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITMasterViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
