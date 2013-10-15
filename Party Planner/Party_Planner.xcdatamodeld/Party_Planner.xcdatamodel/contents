@@ -10,6 +10,7 @@
     </entity>
     <entity name="Party" representedClassName="Party">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="partyName" optional="YES" attributeType="String">
             <userInfo/>
@@ -21,6 +22,6 @@
     <elements>
         <element name="Food" positionX="108" positionY="63" width="128" height="75"/>
         <element name="Guest" positionX="81" positionY="189" width="128" height="75"/>
-        <element name="Party" positionX="261" positionY="189" width="128" height="120"/>
+        <element name="Party" positionX="261" positionY="189" width="128" height="135"/>
     </elements>
 </model>

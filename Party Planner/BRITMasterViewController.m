@@ -12,10 +12,45 @@
 #import "Party.h"
 
 @interface BRITMasterViewController ()
+@property (strong, nonatomic)NSArray *orderedParties;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation BRITMasterViewController
+
+- (void)loadOrderedPartiesArrayFromFetchedResultsController
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayOrder" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
+    NSMutableArray *myOrderedPartiesArray = [[NSMutableArray alloc] initWithArray:[self.fetchedResultsController fetchedObjects]];
+    [myOrderedPartiesArray sortUsingDescriptors:sortDescriptors];
+    _orderedParties = myOrderedPartiesArray;
+}
+
+- (void)reloadOrderedPartiesArrayWithNewObject: (Party *)newParty
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayOrder" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
+    NSMutableArray *myOrderedPartiesArray = [[NSMutableArray alloc] initWithArray:_orderedParties];
+    [myOrderedPartiesArray addObject:newParty];
+    [myOrderedPartiesArray sortUsingDescriptors:sortDescriptors];
+    _orderedParties = myOrderedPartiesArray;
+}
+
+- (void)removeObjectFromOrderedPartiesArray: (Party *)removeParty
+{
+    Party *party = nil;
+    NSMutableArray *myOrderedPartiesArray = [[NSMutableArray alloc] initWithArray:_orderedParties];
+    [myOrderedPartiesArray removeObject:removeParty];
+    //recalculate displayOrder values
+    NSInteger end = [myOrderedPartiesArray count] - 1;
+    
+    for (NSInteger i=0; i <= end; i++) {
+        party = [myOrderedPartiesArray objectAtIndex:i];
+        party.displayOrder = @(i);
+    }
+    _orderedParties = myOrderedPartiesArray;
+}
 
 - (void)awakeFromNib
 {
@@ -29,6 +64,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self loadOrderedPartiesArrayFromFetchedResultsController];
 
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -55,7 +92,14 @@
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Party *newParty = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
-    newParty.partyName = [[NSDate date] description];
+    newParty.partyName = @"New Party";
+    newParty.location = @"Unknown";
+    newParty.date = [NSDate date];
+    newParty.displayOrder = [NSNumber numberWithUnsignedInteger:[_orderedParties count]];
+    
+    //reload _orderedParties
+    [self reloadOrderedPartiesArrayWithNewObject: newParty];
+    
     
     // Save the context.
     NSError *error = nil;
@@ -69,6 +113,23 @@
 
 #pragma mark - Table View
 
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    
+    if (editing == YES) {
+        NSManagedObjectContext *context = self.managedObjectContext;
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [[self.fetchedResultsController sections] count];
@@ -76,8 +137,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return [_orderedParties count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,7 +157,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [context deleteObject:[_orderedParties objectAtIndex:indexPath.row]];
+        
+        [self removeObjectFromOrderedPartiesArray:[_orderedParties objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -111,15 +173,40 @@
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // The table view should not be re-orderable.
-    return NO;
+    // The table view should be re-orderable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    NSMutableArray *myParties = [NSMutableArray arrayWithArray:_orderedParties];
+    Party* party = [myParties objectAtIndex:sourceIndexPath.row];
+    [myParties removeObjectAtIndex:sourceIndexPath.row];
+    [myParties insertObject:party atIndex:destinationIndexPath.row];
+    
+    NSInteger start = sourceIndexPath.row;
+    if (destinationIndexPath.row < start) {
+        start = destinationIndexPath.row;
+    }
+    
+    NSInteger end = destinationIndexPath.row;
+    if (sourceIndexPath.row > end) {
+        end = sourceIndexPath.row;
+    }
+    
+    //reset the display order of items in the array
+    for (NSInteger i = 0; i <= end; i++) {
+        party = [myParties objectAtIndex:i];
+        party.displayOrder = @(i);
+    }
+    _orderedParties = myParties;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        self.detailViewController.detailItem = (Party *)object;
+        Party *object = (Party*)[_orderedParties objectAtIndex:indexPath.row];
+        self.detailViewController.detailItem = object;
     }
 }
 
@@ -154,7 +241,7 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"partyName" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"displayOrder" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -238,8 +325,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"partyName"] description];
+    Party *object = (Party*)[_orderedParties objectAtIndex:indexPath.row];
+    cell.textLabel.text = object.partyName;
 }
 
 @end
