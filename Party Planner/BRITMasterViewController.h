@@ -12,7 +12,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface BRITMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface BRITMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) BRITDetailViewController *detailViewController;
 

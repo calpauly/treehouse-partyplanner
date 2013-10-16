@@ -77,7 +77,6 @@
         
         self.detailViewController.managedObjectContext = self.managedObjectContext;
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,6 +125,12 @@
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Testing Error" message:@"Testing Message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", @"Info", nil];
+//            [alertView show];
+            
+//            UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Testing Sheet" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Destruct" otherButtonTitles:@"Info", nil];
+//            [actionSheet showInView:self.view];
+            
         }
     }
 }
@@ -329,4 +334,41 @@
     cell.textLabel.text = object.partyName;
 }
 
+#pragma mark - UIAlertViewDelegate implementation
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Button 0 pressed");
+            break;
+        case 1:
+            NSLog(@"Button 1 pressed");
+            break;
+        case 2:
+            NSLog(@"Button 2 pressed");
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - UIActionSheetDelegate implementation
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Button 0 pressed");
+            break;
+        case 1:
+            NSLog(@"Button 1 pressed");
+            break;
+        case 2:
+            NSLog(@"Button 2 pressed");
+            break;
+        default:
+            break;
+    }
+}
 @end
