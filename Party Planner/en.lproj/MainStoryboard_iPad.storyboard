@@ -87,11 +87,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" textLabel="DaV-YC-c3o" detailTextLabel="MTs-qT-rkf" style="IBUITableViewCellStyleValue2" id="UeI-ms-DVN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" textLabel="DaV-YC-c3o" detailTextLabel="MTs-qT-rkf" style="IBUITableViewCellStyleValue2" id="UeI-ms-DVN">
                                 <rect key="frame" x="0.0" y="22" width="703" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="703" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="670" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaV-YC-c3o">
@@ -107,6 +107,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="3cC-9f-6hi" kind="modal" identifier="editableDetailsSegue" trigger="accessoryAction" modalPresentationStyle="formSheet" id="esa-2F-jQY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -119,6 +122,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skv-wS-ap9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="448" y="248"/>
+        </scene>
+        <!--Editable Detail View Controller - Edit Details-->
+        <scene sceneID="k1o-zh-gcn">
+            <objects>
+                <viewController title="Edit Details" id="3cC-9f-6hi" customClass="BRITEditableDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jOo-Tn-Zdw">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Party Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjB-uG-op6" userLabel="editablePartyNameField">
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Z1j-Iv-mdh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-98-FZr" userLabel="editableLocationField">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-sj-6IM" userLabel="editableDateField">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPM-6l-hrj">
+                                <items>
+                                    <navigationItem title="Title" id="7hO-f0-vEv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zRK-K6-Iam">
+                                            <connections>
+                                                <action selector="cancel:" destination="3cC-9f-6hi" id="8qW-lL-bOc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4vG-Dr-gVU">
+                                            <connections>
+                                                <action selector="save:" destination="3cC-9f-6hi" id="QND-fS-PYp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Ri-98-FZr" firstAttribute="trailing" secondItem="3b9-sj-6IM" secondAttribute="trailing" type="default" id="4SB-74-ymO"/>
+                            <constraint firstItem="4Ri-98-FZr" firstAttribute="leading" secondItem="3b9-sj-6IM" secondAttribute="leading" type="default" id="6tg-qU-zSy"/>
+                            <constraint firstItem="fPM-6l-hrj" firstAttribute="top" secondItem="jOo-Tn-Zdw" secondAttribute="top" type="default" id="9xu-yF-Lwd"/>
+                            <constraint firstItem="4Ri-98-FZr" firstAttribute="trailing" secondItem="vjB-uG-op6" secondAttribute="trailing" type="default" id="DVi-1f-mSQ"/>
+                            <constraint firstItem="fPM-6l-hrj" firstAttribute="trailing" secondItem="jOo-Tn-Zdw" secondAttribute="trailing" type="default" id="NSq-Eb-AUB"/>
+                            <constraint firstItem="fPM-6l-hrj" firstAttribute="centerX" secondItem="vjB-uG-op6" secondAttribute="centerX" type="default" id="OM8-pE-SOh"/>
+                            <constraint firstItem="3b9-sj-6IM" firstAttribute="top" secondItem="4Ri-98-FZr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RSC-Bn-EXv"/>
+                            <constraint firstItem="vjB-uG-op6" firstAttribute="top" secondItem="jOo-Tn-Zdw" secondAttribute="top" constant="94" id="Tl1-W1-ONM"/>
+                            <constraint firstItem="4Ri-98-FZr" firstAttribute="top" secondItem="vjB-uG-op6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mQX-u5-bhi"/>
+                            <constraint firstItem="fPM-6l-hrj" firstAttribute="leading" secondItem="jOo-Tn-Zdw" secondAttribute="leading" type="default" id="mxG-Fx-ks0"/>
+                            <constraint firstItem="4Ri-98-FZr" firstAttribute="leading" secondItem="vjB-uG-op6" secondAttribute="leading" type="default" id="x01-Nn-Eeb"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="partyDateField" destination="3b9-sj-6IM" id="bgy-Fb-0Bd"/>
+                        <outlet property="partyLocationField" destination="4Ri-98-FZr" id="VtZ-HS-T1f"/>
+                        <outlet property="partyNameField" destination="vjB-uG-op6" id="YIT-sx-TTD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LD-kU-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="50">
@@ -140,8 +210,21 @@
         <class className="BRITDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITDetailViewController.h"/>
         </class>
+        <class className="BRITEditableDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITEditableDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="partyDateField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="partyLocationField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="partyNameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="BRITMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BRITMasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

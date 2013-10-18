@@ -22,6 +22,7 @@
 		DA14BB0F1803D5A60019FA73 /* Party_Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */; };
 		DA14BB121803D5A60019FA73 /* BRITMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */; };
 		DA14BB151803D5A60019FA73 /* BRITDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */; };
+		DA3797CE181101D600C2CE1A /* BRITEditableDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3797CD181101D600C2CE1A /* BRITEditableDetailViewController.m */; };
 		DA6183CF180CF634001DA5E5 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6183CE180CF634001DA5E5 /* Party.m */; };
 		DACA1C141809012C00F6911F /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = DACA1C131809012C00F6911F /* Guest.m */; };
 		DAF494A718051A7600BFC0C0 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF494A618051A7600BFC0C0 /* Food.m */; };
@@ -49,6 +50,8 @@
 		DA14BB111803D5A60019FA73 /* BRITMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITMasterViewController.m; sourceTree = "<group>"; };
 		DA14BB131803D5A60019FA73 /* BRITDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRITDetailViewController.h; sourceTree = "<group>"; };
 		DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRITDetailViewController.m; sourceTree = "<group>"; };
+		DA3797CC181101D600C2CE1A /* BRITEditableDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRITEditableDetailViewController.h; sourceTree = "<group>"; };
+		DA3797CD181101D600C2CE1A /* BRITEditableDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRITEditableDetailViewController.m; sourceTree = "<group>"; };
 		DA6183CD180CF634001DA5E5 /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
 		DA6183CE180CF634001DA5E5 /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Party.m; sourceTree = "<group>"; };
 		DACA1C121809012C00F6911F /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				DA14BB141803D5A60019FA73 /* BRITDetailViewController.m */,
 				DA14BB0D1803D5A60019FA73 /* Party_Planner.xcdatamodeld */,
 				DA14BAF61803D5A60019FA73 /* Supporting Files */,
+				DA3797CC181101D600C2CE1A /* BRITEditableDetailViewController.h */,
+				DA3797CD181101D600C2CE1A /* BRITEditableDetailViewController.m */,
 			);
 			path = "Party Planner";
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				DAF494A718051A7600BFC0C0 /* Food.m in Sources */,
 				DACA1C141809012C00F6911F /* Guest.m in Sources */,
 				DA6183CF180CF634001DA5E5 /* Party.m in Sources */,
+				DA3797CE181101D600C2CE1A /* BRITEditableDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

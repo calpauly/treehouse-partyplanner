@@ -8,6 +8,7 @@
 
 #import "BRITDetailViewController.h"
 #import "Party.h"
+#import "BRITEditableDetailViewController.h"
 
 @interface BRITDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -89,6 +90,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"editableDetailsSegue"]) {
+        ((BRITEditableDetailViewController *)segue.destinationViewController).managedObjectContext = ((BRITDetailViewController *)segue.sourceViewController).managedObjectContext;
+        
+        ((BRITEditableDetailViewController *)segue.destinationViewController).detailItem = ((BRITDetailViewController *)segue.sourceViewController).detailItem;
+    }
+}
+
 #pragma mark - Table View
 
 -(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -103,10 +113,13 @@
             cell.textLabel.text = @"Location";
             break;
         case 2:
-            cell.detailTextLabel.text = [self.detailItem.date description];
+        {
+            NSDateFormatter *dateFormat = [NSDateFormatter new];
+            [dateFormat setDateFormat:@"MM dd yyyy"];
+            cell.detailTextLabel.text = [dateFormat stringFromDate:self.detailItem.date];
             cell.textLabel.text = @"Date";
             break;
-            
+        }
         default:
             break;
     }
